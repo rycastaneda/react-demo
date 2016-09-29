@@ -4,7 +4,7 @@ const babel = require('gulp-babel');
 gulp.task('babel', () => {
     return gulp.src('*.jsx')
         .pipe(babel({
-            presets: ['babel-preset-react']
+            presets: ['es2015', 'react']
         }))
         .pipe(gulp.dest('dist'));
 });

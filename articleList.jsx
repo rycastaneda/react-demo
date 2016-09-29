@@ -8,9 +8,6 @@ var ArticleList = React.createClass({
             }]
         };
     },
-    toggleAll: function () {
-
-    },
     render: function() {
         console.log("rendering articleLList");
         let articles = this.state.articles.map((article) => {
