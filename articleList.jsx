@@ -31,21 +31,15 @@ var ArticleList = React.createClass({
         // this.forceUpdate();
 
         // Second try
-        var idx = this.state.articles.findIndex(function(element, index) {
-            return element.id === article.id;
-        });
+        // var idx = this.state.articles.findIndex(function(element, index) {
+        //     return element.id === article.id;
+        // });
 
         // this.state.articles[idx] = article;
 
         // this.setState({
         //     articles: this.state.articles
         // })
-        var map = Immutable.fromJS(this.state.articles);
-        //IMMUTABLE SOLUTION
-        this.setState({
-            articles: map.set(idx, article)
-        })
-
     },
     render: function() {
         let articles = this.state.articles.map((article) => {
