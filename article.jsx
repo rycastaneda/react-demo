@@ -7,21 +7,13 @@ var Article = React.createClass({
     },
     render: function() {
         console.log("rendering article", this.props);
+
         let content = (
             <div>
-                <div>{this.props.content}</div>
-                <button onClick={this.toggle}>HIDE</button>
+                <div>{this.state.open && this.props.content || 'THIS ARTICLE IS HIDDEN'}</div>
+                <button onClick={this.toggle}>{this.state.open && 'HIDE' || 'SHOW'}</button>
             </div>
         );
-
-        if (!this.state.open) {
-            content = (
-                <div>
-                    <p>Article HIDDEN</p>
-                    <button onClick={this.toggle}>SHOW</button>
-                </div>
-            )
-        }
 
         return (
             <div>
