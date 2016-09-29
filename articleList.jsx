@@ -19,29 +19,27 @@ var ArticleList = React.createClass({
             return article;
         });
 
-        console.log("articles", articles);
-
         this.setState({
             allShown: !this.state.allShown,
             articles: articles,
         });
     },
     toggle: function (article) {
-        article.open = !article.open;
+        // article.open = !article.open;
         // this.forceUpdate();
+        var articles = this.state.articles;
 
-        // Second try
-        // var idx = this.state.articles.findIndex(function(element, index) {
-        //     return element.id === article.id;
-        // });
+        var idx = articles.findIndex(function(element, index) {
+            return element.id === article.id;
+        });
 
-        // this.state.articles[idx] = article;
-
-        // this.setState({
-        //     articles: this.state.articles
-        // })
+        articles[idx].open = !articles[idx].open;
+        this.setState({
+            articles: articles
+        })
     },
     render: function() {
+        console.log('rendering Aritcle Lists', this.state.articles)
         let articles = this.state.articles.map((article) => {
             return (
                 <Article {...article} onToggle={this.toggle}></Article>
