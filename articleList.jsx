@@ -25,8 +25,6 @@ var ArticleList = React.createClass({
         });
     },
     toggle: function (article) {
-        // article.open = !article.open;
-        // this.forceUpdate();
         var articles = this.state.articles;
 
         var idx = articles.findIndex(function(element, index) {
@@ -39,7 +37,7 @@ var ArticleList = React.createClass({
         })
     },
     render: function() {
-        console.log('rendering Aritcle Lists', this.state.articles)
+        console.log('rendering Article Lists', this.state.articles)
         let articles = this.state.articles.map((article) => {
             return (
                 <Article {...article} onToggle={this.toggle}></Article>
@@ -49,7 +47,7 @@ var ArticleList = React.createClass({
         return (
             <div>
                 <button onClick={this.toggleAll}>
-                {this.state.allShown ? 'Hide' : 'Show'}
+                {this.state.allShown ? 'Hide All' : 'Show All'}
                 </button>
                 {articles}
             </div>

@@ -1,8 +1,4 @@
 var Article = React.createClass({
-    // shouldComponentUpdate: function (nextProps, nextState) {
-        // console.log("change?", this.props.open !== nextProps.open);
-        // return this.props.open !== nextProps.open;
-    // },
     render: function() {
         console.log("rendering article", this.props);
         var article = this.props;
